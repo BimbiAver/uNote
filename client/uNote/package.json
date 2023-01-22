@@ -1,6 +1,8 @@
 {
   "name": "u-note",
-  "version": "0.0.0",
+  "description": "The simplest way to keep notes",
+  "version": "1.0.0",
+  "author": "Deshan D. Abeykoon (BimbiAver)",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
