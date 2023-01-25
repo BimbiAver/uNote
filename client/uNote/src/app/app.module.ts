@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { AuthComponent } from './layouts/auth/auth.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { SignupComponent } from './components/signup/signup.component';
     AppComponent,
     ForgotPasswordComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,

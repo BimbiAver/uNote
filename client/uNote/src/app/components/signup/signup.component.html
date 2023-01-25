@@ -1,49 +1,26 @@
-<main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
-    <div class="container">
-        <div class="card login-card">
-            <div class="row no-gutters">
-                <div class="col-md-5">
-                    <img src="../assets/images/login-side-img.jpg" alt="login" class="login-card-img" />
-                </div>
-                <div class="col-md-7">
-                    <div class="card-body">
-                        <div class="brand-wrapper">
-                            <img src="../assets/images/logo.png" alt="logo" class="logo" />
-                        </div>
-                        <p class="login-card-description">Create new account</p>
-                        <form action="#!">
-                            <div class="form-group mb-0">
-                                <div class="form-row">
-                                    <div class="col">
-                                        <input type="text" name="firstName" id="firstName" class="form-control"
-                                            placeholder="First name" required />
-                                    </div>
-                                    <div class="col">
-                                        <input type="text" name="lastName" id="lastName" class="form-control"
-                                            placeholder="Last name" required />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" name="email" id="email" class="form-control"
-                                    placeholder="Email address" required />
-                            </div>
-                            <div class="form-group mb-4">
-                                <input type="password" name="password" id="password" class="form-control"
-                                    placeholder="●●●●●●●●●●" required />
-                            </div>
-                            <input name="signup" id="signup" class="btn btn-block login-btn mb-4" type="button"
-                                value="Sign Up" />
-                        </form>
-                        <p class="login-card-footer-text">
-                            <a href="#!" class="text-reset">Sign into your account</a>
-                        </p>
-                        <nav class="login-card-footer-nav">
-                            © 2023 uNote | All Rights Reserved.
-                        </nav>
-                    </div>
-                </div>
+<p class="login-card-description">Create new account</p>
+<form action="#!">
+    <div class="form-group mb-0">
+        <div class="form-row">
+            <div class="col">
+                <input type="text" name="firstName" id="firstName" class="form-control" placeholder="First name"
+                    required />
+            </div>
+            <div class="col">
+                <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last name"
+                    required />
             </div>
         </div>
     </div>
-</main>
+    <div class="form-group">
+        <input type="email" name="email" id="email" class="form-control" placeholder="Email address" required />
+    </div>
+    <div class="form-group mb-4">
+        <input type="password" name="password" id="password" class="form-control" placeholder="●●●●●●●●●●" required />
+    </div>
+    <input name="signup" id="signup" class="btn btn-block login-btn mb-4" type="button" value="Sign Up" />
+</form>
+<p class="login-card-footer-text">
+    <a class="text-reset" routerLink="/auth/sign-in" routerLinkActive="active" ariaCurrentWhenActive="page">Sign into
+        your account</a>
+</p>
