@@ -3,6 +3,8 @@ const {
     getNotes,
     getNote,
     createNote,
+    deleteNote,
+    updateNote
 } = require('../controllers/noteController');
 
 const router = express.Router();
@@ -17,13 +19,9 @@ router.get('/:id', getNote);
 router.post('/', createNote);
 
 // DELETE a note
-router.delete('/:id', (req, res) => {
-    res.json({ msg: 'Your note has been deleted' });
-});
+router.delete('/:id', deleteNote);
 
 // UPDATE a note
-router.patch('/:id', (req, res) => {
-    res.json({ msg: 'Your note has been updated' });
-});
+router.patch('/:id', updateNote);
 
 module.exports = router;
