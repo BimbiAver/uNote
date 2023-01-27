@@ -1,4 +1,4 @@
-const Note = require('../models/noteModel');
+const Note = require('../models/note.model');
 const mongoose = require('mongoose');
 
 // Get all notes

@@ -1,4 +1,4 @@
-const User = require('../models/userModel');
+const User = require('../models/user.model');
 const mongoose = require('mongoose');
 
 // Get all users
@@ -30,10 +30,10 @@ const getUser = async (req, res) => {
 // Create a new user
 const createUser = async (req, res) => {
     // Fetch data from the request body
-    const { firstName, lastName, emailAddress, password } = req.body;
+    const { firstName, lastName, emailAddress, password, role } = req.body;
     try {
         // Add user
-        const user = await User.create({ firstName, lastName, emailAddress, password });
+        const user = await User.create({ firstName, lastName, emailAddress, password, role });
         res.status(200).json(user);
     } catch (error) {
         res.status(400).json({ error: error.message });
