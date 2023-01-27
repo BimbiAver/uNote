@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const noteRoutes = require('./routes/notes');
+const userRoutes = require('./routes/users');
 
 // Express app
 const app = express();
@@ -15,8 +16,9 @@ app.use((req, res, next) => {
   next();
 });
 
-// Define the route handler
+// Define the route handlers
 app.use('/api/notes', noteRoutes);
+app.use('/api/users', userRoutes);
 
 // Connect to the DB
 mongoose.set('strictQuery', true); // Fix the deprecation warning
