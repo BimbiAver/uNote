@@ -3,13 +3,15 @@ const mongoose = require('mongoose');
 
 // Get all notes
 const getNotes = async (req, res) => {
+    const { userId } = req.user; // Fetch userId from the req.user property initialized by auth middleware
     // Fetch all notes in descending order - last updated datetime
-    const notes = await Note.find({}).sort({ updatedAt: -1 });
+    const notes = await Note.find({ userId: userId }).sort({ updatedAt: -1 });
     res.status(200).json(notes);
 };
 
 // Get a specific note
 const getNote = async (req, res) => {
+    const { userId } = req.user; // Fetch userId from the req.user property initialized by auth middleware
     // Get ID from the request param
     const { id } = req.params;
 
@@ -19,7 +21,7 @@ const getNote = async (req, res) => {
     }
 
     // Fetch the selected note
-    const note = await Note.findById(id);
+    const note = await Note.find({ _id: id, userId: userId });
     // Check if the note exists or not
     if (!note) {
         return res.status(400).json({ error: 'No such note' });
@@ -33,7 +35,7 @@ const createNote = async (req, res) => {
     const { title, content } = req.body;
     try {
         // Add data
-        const note = await Note.create({ title, content });
+        const note = await Note.create({ title, content, userId: req.user.userId });
         res.status(200).json(note);
     } catch (error) {
         res.status(400).json({ error: error.message });
@@ -42,6 +44,7 @@ const createNote = async (req, res) => {
 
 // Delete a note
 const deleteNote = async (req, res) => {
+    const { userId } = req.user; // Fetch userId from the req.user property initialized by auth middleware
     // Get ID from the request param
     const { id } = req.params;
 
@@ -51,7 +54,7 @@ const deleteNote = async (req, res) => {
     }
 
     // Fetch the selected note
-    const note = await Note.findOneAndDelete({ _id: id });
+    const note = await Note.findOneAndDelete({ _id: id, userId: userId });
     // Check if the note exists or not
     if (!note) {
         return res.status(400).json({ error: 'No such note' });
@@ -61,6 +64,7 @@ const deleteNote = async (req, res) => {
 
 // Update a note
 const updateNote = async (req, res) => {
+    const { userId } = req.user; // Fetch userId from the req.user property initialized by auth middleware
     // Get ID from the request param
     const { id } = req.params;
 
@@ -70,7 +74,7 @@ const updateNote = async (req, res) => {
     }
 
     // Fetch the selected note
-    const note = await Note.findOneAndUpdate({ _id: id }, { ...req.body });
+    const note = await Note.findOneAndUpdate({ _id: id, userId: userId }, { ...req.body });
     // Check if the note exists or not
     if (!note) {
         return res.status(400).json({ error: 'No such note' });

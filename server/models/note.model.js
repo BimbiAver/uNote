@@ -11,6 +11,10 @@ const noteSchema = new Schema({
     content: {
         type: String,
         required: true
+    },
+    userId: {
+        type: String,
+        required: true
     }
 }, { timestamps: true });
 
