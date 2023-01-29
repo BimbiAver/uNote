@@ -16,7 +16,7 @@ const signup = async (req, res) => {
       // Create a new user
       const user = await User.create(req.body);
       // send new user as response
-      res.status(200).json(user);
+      res.status(201).json(user);
     } else {
       res.status(400).json({ error: 'This email is already in use' });
     }
