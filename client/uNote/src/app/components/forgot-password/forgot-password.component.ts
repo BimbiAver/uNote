@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-forgot-password',
@@ -7,7 +6,5 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./forgot-password.component.css']
 })
 export class ForgotPasswordComponent {
-  constructor(private titleService: Title) {
-    this.titleService.setTitle("Forgot Password | uNote - The simplest way to keep notes");
-  }
+  constructor() { }
 }

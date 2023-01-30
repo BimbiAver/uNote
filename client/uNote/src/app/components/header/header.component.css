@@ -1,0 +1,17 @@
+.navbar {
+  background-color: #e0f1fc;
+}
+
+a.nav-link {
+  font-size: 18px;
+}
+
+.btn-signout {
+  background-color: #276dfe;
+  border-color: #276dfe;
+}
+
+.btn-signout:hover {
+  background-color: #0069d9;
+  border-color: #0069d9;
+}

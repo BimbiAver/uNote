@@ -13,6 +13,10 @@ import { SignupComponent } from './components/signup/signup.component';
 import { AuthComponent } from './layouts/auth/auth.component';
 import { HomeComponent } from './components/home/home.component';
 import { Error404Component } from './pages/error404/error404.component';
+import { MainComponent } from './layouts/main/main.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -23,7 +27,11 @@ import { Error404Component } from './pages/error404/error404.component';
     SignupComponent,
     AuthComponent,
     HomeComponent,
-    Error404Component
+    Error404Component,
+    MainComponent,
+    ProfileComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
