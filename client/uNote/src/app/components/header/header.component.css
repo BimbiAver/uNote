@@ -15,3 +15,8 @@ a.nav-link {
   background-color: #0069d9;
   border-color: #0069d9;
 }
+
+.navbar-nav > .active a {
+  color: #276dfe;
+  font-weight: 500;
+}
