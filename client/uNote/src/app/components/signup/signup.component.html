@@ -1,26 +1,28 @@
 <p class="login-card-description">Create new account</p>
-<form action="#!">
+<form class="form-signin" [formGroup]="signupForm" (ngSubmit)="userSignup()" ngNativeValidate>
     <div class="form-group mb-0">
         <div class="form-row">
             <div class="col">
-                <input type="text" name="firstName" id="firstName" class="form-control" placeholder="First name"
-                    required />
+                <input type="text" name="firstName" id="firstName" class="form-control" formControlName="firstName"
+                    placeholder="First name" required />
             </div>
             <div class="col">
-                <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last name"
-                    required />
+                <input type="text" name="lastName" id="lastName" class="form-control" formControlName="lastName"
+                    placeholder="Last name" required />
             </div>
         </div>
     </div>
     <div class="form-group">
-        <input type="email" name="email" id="email" class="form-control" placeholder="Email address" required />
+        <input type="email" name="emailAddress" id="emailAddress" class="form-control" formControlName="emailAddress"
+            placeholder="Email address" required />
     </div>
     <div class="form-group mb-4">
-        <input type="password" name="password" id="password" class="form-control" placeholder="●●●●●●●●●●" required />
+        <input type="password" name="password" id="password" class="form-control" formControlName="password"
+            placeholder="●●●●●●●●●●" required />
     </div>
-    <input name="signup" id="signup" class="btn btn-block login-btn mb-4" type="button" value="Sign Up" />
+    <button name="signup" id="signup" class="btn btn-block login-btn mb-4" type="submit">Sign Up</button>
 </form>
 <p class="login-card-footer-text">
-    <a class="text-reset" routerLink="/auth/sign-in" routerLinkActive="active" ariaCurrentWhenActive="page">Sign into
+    <a class="text-reset" routerLink="/auth/sign-in">Sign into
         your account</a>
 </p>
