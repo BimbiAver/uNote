@@ -1,6 +1,8 @@
 const User = require('../models/user.model');
 const mongoose = require('mongoose');
 
+const bcrypt = require('bcryptjs'); // bcrypt for password-hashing
+
 // Get all users
 const getUsers = async (req, res) => {
   const { role } = req.user; // Fetch role from the req.user property initialized by auth middleware
@@ -104,6 +106,8 @@ const updateUser = async (req, res) => {
 
   // Only admins can update all users' details
   if (userId === id || role === 'admin') {
+    // Hash the password
+    req.body.password = await bcrypt.hash(req.body.password, 10);
     // Fetch the selected user
     const user = await User.findOneAndUpdate({ _id: id }, { ...req.body });
     // Check if the user exists or not
