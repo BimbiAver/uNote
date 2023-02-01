@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { Error404Component } from './pages/error404/error404.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { MainComponent } from './layouts/main/main.component';
+import { NotesComponent } from './components/notes/notes.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       { path: 'home', component: HomeComponent, title: 'Home | uNote - The simplest way to keep notes' },
+      { path: 'notes', component: NotesComponent, title: 'Notes | uNote - The simplest way to keep notes' },
       { path: 'profile', component: ProfileComponent, title: 'Profile | uNote - The simplest way to keep notes' },
       { path: '', redirectTo: "home", pathMatch: "full" }
     ],
