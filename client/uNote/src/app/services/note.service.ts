@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { catchError, map, Observable, throwError } from 'rxjs';
+import { Note } from '../models/note.model';
 
 const NOTES_API = 'http://localhost:3000/api/notes';
 
@@ -29,6 +30,14 @@ export class NoteService {
       }),
       catchError(this.handleError)
     );
+  }
+
+  // Add note
+  addNote(data: Note): Observable<any> {
+    let api = `${NOTES_API}`;
+    return this.http
+      .post(api, data)
+      .pipe(catchError(this.handleError));
   }
 
   // Update note

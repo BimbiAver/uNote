@@ -1,0 +1,23 @@
+<div class="container d-flex flex-column min-vh-100 pt-5 pb-5">
+    <!-- Heading -->
+    <div class="row heading justify-content-around">
+        <div class="col-auto mr-auto">
+            <h4 class="section-title"><i class="fa-solid fa-pen-to-square mr-3"></i>Add note</h4>
+        </div>
+    </div>
+
+    <!-- Note -->
+    <div class=" container d-flex flex-column pt-5 pb-5">
+        <form [formGroup]="noteForm" (ngSubmit)="saveNote()" ngNativeValidate>
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" formControlName="title" required>
+            </div>
+            <div class="form-group">
+                <label for="content">Content</label>
+                <textarea class="form-control" id="content" formControlName="content" rows="10" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-edit" name="btn-save-note">Save note</button>
+        </form>
+    </div>
+</div>

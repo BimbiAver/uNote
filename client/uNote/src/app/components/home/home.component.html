@@ -3,10 +3,10 @@
     <div class="row heading justify-content-around">
         <div class="col-auto mr-auto">
             <h4 class="section-title">👋 Hi {{ this.jwtPayload.firstName }}, Welcome!</h4>
-            <p class="blockquote-footer">Here's your latest notes</p>
+            <p class="blockquote-footer">Here're your latest notes</p>
         </div>
         <div class="col-auto">
-            <button type="button" class="btn btn-edit" name="btn-add-note">Add note</button>
+            <button type="button" class="btn btn-edit" name="btn-add-note" routerLink="/add-note">Add note</button>
         </div>
     </div>
 
@@ -28,8 +28,8 @@
                 </div>
             </div>
         </div>
-        <button type="button" class="btn btn-primary btn-more mx-auto" name="btn-more" routerLink="/notes">View
-            more</button>
+        <button type="button" class="btn btn-primary btn-more mx-auto" name="btn-more" routerLink="/notes"
+            *ngIf="notes != ''">View more</button>
     </div>
 
 </div>

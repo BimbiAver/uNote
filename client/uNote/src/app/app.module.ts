@@ -19,6 +19,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NotesComponent } from './components/notes/notes.component';
 import { EditNoteComponent } from './components/edit-note/edit-note.component';
+import { AddNoteComponent } from './components/add-note/add-note.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { EditNoteComponent } from './components/edit-note/edit-note.component';
     HeaderComponent,
     FooterComponent,
     NotesComponent,
-    EditNoteComponent
+    EditNoteComponent,
+    AddNoteComponent
   ],
   imports: [
     BrowserModule,
