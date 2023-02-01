@@ -10,6 +10,7 @@ import { Error404Component } from './pages/error404/error404.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { MainComponent } from './layouts/main/main.component';
 import { NotesComponent } from './components/notes/notes.component';
+import { EditNoteComponent } from './components/edit-note/edit-note.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,7 @@ const routes: Routes = [
     children: [
       { path: 'home', component: HomeComponent, title: 'Home | uNote - The simplest way to keep notes' },
       { path: 'notes', component: NotesComponent, title: 'Notes | uNote - The simplest way to keep notes' },
+      { path: 'edit-note/:id', component: EditNoteComponent, title: 'Edit note | uNote - The simplest way to keep notes' },
       { path: 'profile', component: ProfileComponent, title: 'Profile | uNote - The simplest way to keep notes' },
       { path: '', redirectTo: "home", pathMatch: "full" }
     ],
@@ -38,7 +40,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

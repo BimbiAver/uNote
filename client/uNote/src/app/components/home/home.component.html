@@ -6,7 +6,7 @@
             <p class="blockquote-footer">Here's your latest notes</p>
         </div>
         <div class="col-auto">
-            <button type="button" class="btn btn-edit" name="btn-add-note">Add Note</button>
+            <button type="button" class="btn btn-edit" name="btn-add-note">Add note</button>
         </div>
     </div>
 
@@ -14,8 +14,8 @@
     <div class="container d-flex flex-column pt-5 pb-5">
         <div class="card-deck">
             <div class="row card-group">
-                <div class="col-lg-3 col-md-4 col-sm-6 card-col" *ngFor="let note of notes">
-                    <a routerLink="/notes/{{ note._id }}" style="all: unset; cursor:pointer;">
+                <div class="col-lg-3 col-md-4 col-sm-6 card-col" *ngFor="let note of notes; let i = index">
+                    <a routerLink="/edit-note/{{ note._id }}" style="all: unset; cursor:pointer;" *ngIf=" i < 4 ">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">{{ note.title }}</h5>
@@ -28,6 +28,8 @@
                 </div>
             </div>
         </div>
+        <button type="button" class="btn btn-primary btn-more mx-auto" name="btn-more" routerLink="/notes">View
+            more</button>
     </div>
 
 </div>

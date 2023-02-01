@@ -18,6 +18,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NotesComponent } from './components/notes/notes.component';
+import { EditNoteComponent } from './components/edit-note/edit-note.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { NotesComponent } from './components/notes/notes.component';
     ProfileComponent,
     HeaderComponent,
     FooterComponent,
-    NotesComponent
+    NotesComponent,
+    EditNoteComponent
   ],
   imports: [
     BrowserModule,

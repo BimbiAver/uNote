@@ -5,7 +5,7 @@
             <h4 class="section-title"><i class="fa-solid fa-note-sticky mr-3"></i>All Notes</h4>
         </div>
         <div class="col-auto">
-            <button type="button" class="btn btn-edit" name="btn-add-note">Add Note</button>
+            <button type="button" class="btn btn-edit" name="btn-add-note">Add note</button>
         </div>
     </div>
 
@@ -14,7 +14,7 @@
         <div class="card-deck">
             <div class="row card-group">
                 <div class="col-lg-3 col-md-4 col-sm-6 card-col" *ngFor="let note of notes">
-                    <a routerLink="/notes/{{ note._id }}" style="all: unset; cursor:pointer;">
+                    <a routerLink="/edit-note/{{ note._id }}" style="all: unset; cursor:pointer;">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">{{ note.title }}</h5>
